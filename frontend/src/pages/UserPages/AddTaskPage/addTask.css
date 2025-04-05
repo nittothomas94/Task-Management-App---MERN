@@ -1,0 +1,34 @@
+.add-task-page {
+  width: 100%;
+  min-height: 89vh;
+  background-color: lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-add_task {
+  width: 50%;
+  min-height: 60vh;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 20px;
+  padding: 30px 5%;
+}
+
+@media (max-width: 1024px) {
+  .main-add_task {
+    width: 70%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 450px) {
+  .main-add_task {
+    width: 95%;
+  }
+}

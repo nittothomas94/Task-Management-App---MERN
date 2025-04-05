@@ -1,0 +1,156 @@
+.task_page {
+  background-image: url('https://media.licdn.com/dms/image/v2/C4E12AQGZindDg0ey5A/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1528858891145?e=2147483647&v=beta&t=wijdIW-iELHAArcBAoMPCbCqmd2T5Z5l0vDL1Vvv97Q');
+  background-size: cover;
+  /* width: 100%; */
+  min-height: 90vh;
+  display: flex;
+  justify-content: start;
+  padding: 20px 0px 0px 15%;
+}
+
+.main {
+  width: 45%;
+  min-height: 70vh;
+  background-color: white;
+  border-radius: 15px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.task_manager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* padding-right: 10%; */
+}
+
+.task_manager img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.task__manager {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.add_task_btn {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+}
+
+.add_task_btn:active {
+  transform: scale(0.9);
+  background-color: black;
+}
+
+/* filter */
+
+.selector-filter {
+  width: 100%;
+  /* border: 1px solid rgb(209, 209, 209); */
+}
+
+#statusFilter {
+  width: 100%;
+  border: 1px solid rgb(197, 197, 197);
+  height: 35px;
+  border-radius: 10px;
+  padding: 0px 10px;
+}
+
+/* ul-div */
+
+.ul_div {
+  min-height: 70%;
+  /* border: 1px solid rgb(197, 197, 197); */
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ul_div .card {
+  border: 1px solid rgb(197, 197, 197);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.card p {
+  font-size: 13px;
+  color: rgb(60, 60, 60);
+}
+
+.card_bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  /* text-transform: lowercase; */
+  margin-top: 5px;
+}
+
+.badge.Pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.badge.Completed {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.task-action-btn {
+  color: blue;
+  border: none;
+  background-color: white;
+  padding: 3px 10px;
+  cursor: pointer;
+}
+
+.task-action-btn:hover {
+  background-color: rgb(217, 217, 217);
+}
+
+@media (max-width: 1024px) {
+  .task_page {
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main {
+    width: 80%;
+  }
+}
+
+@media (max-width: 450px) {
+  .main {
+    width: 95%;
+    margin: 20px 0px;
+    padding: 30px 15px;
+  }
+}

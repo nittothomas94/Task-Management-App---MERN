@@ -3,7 +3,14 @@ const Task = require('../db/models/task-schema');
 //get()
 module.exports.getTasks = async (req, res) => {
   try {
-    const response = await Task.find();
+    const { status } = req.query;
+
+    const filters = {};
+    if (status) {
+      filters.status = status;
+    }
+
+    const response = await Task.find(filters);
     return res.status(200).json(response);
   } catch (e) {
     return res.status(500).json({ message: e.message });
