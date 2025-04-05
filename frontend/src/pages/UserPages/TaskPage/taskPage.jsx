@@ -4,6 +4,7 @@ import MyButton from '../../../components/Button/button';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from '../../../utils/axios';
+import TaskCardSkeleton from '../../../components/TaskCardSkeleton/TaskCardSkeleton';
 import {
   Dialog,
   DialogTitle,
@@ -97,31 +98,39 @@ const TaskPage = () => {
             </select>
           </div>
           <div className="ul_div">
-            {Task.map(item => {
-              return (
-                <div className="card">
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                  <div className="card_bottom">
-                    <span className={`badge ${item.status}`}>
-                      {item.status}
-                    </span>
-                    <div className="task-actions">
-                      <MyButton
-                        buttonText="Edit"
-                        onClick={() => onEditClick(item._id)}
-                        className="task-action-btn"
-                      />
-                      <MyButton
-                        buttonText="Delete"
-                        onClick={() => onDeleteClick(item._id)}
-                        className="task-action-btn"
-                      />
+            {loading ? (
+              [1, 2].map(() => {
+                return <TaskCardSkeleton />;
+              })
+            ) : (
+              <>
+                {Task.map(item => {
+                  return (
+                    <div className="card">
+                      <h3>{item.title}</h3>
+                      <p>{item.description}</p>
+                      <div className="card_bottom">
+                        <span className={`badge ${item.status}`}>
+                          {item.status}
+                        </span>
+                        <div className="task-actions">
+                          <MyButton
+                            buttonText="Edit"
+                            onClick={() => onEditClick(item._id)}
+                            className="task-action-btn"
+                          />
+                          <MyButton
+                            buttonText="Delete"
+                            onClick={() => onDeleteClick(item._id)}
+                            className="task-action-btn"
+                          />
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              );
-            })}
+                  );
+                })}
+              </>
+            )}
           </div>
         </div>
       </div>
