@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const customisedAxios = axios.create({
-  baseURL: 'http://localhost:3000/api',
+  baseURL: 'https://task-management-app-mern-r92r.onrender.com/api',
   timeout: 150000,
 });
 
